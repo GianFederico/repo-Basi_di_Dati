@@ -1,0 +1,7 @@
+1000000001	mario	rossi	1990-03-22	sposato	via rossi	bari
+1000000002	mike	verdi	1987-04-12	celibe	via verdi	modugno
+1000000003	niko	gialli	1991-11-29	sposato	via gialli	bari
+1000000004	jim	neri	1978-12-09	sposato	via neri	trani
+1000000005	erin	viola	1988-01-21	nubile	via viola	modugno
+1000000006	dwight	bord	1980-03-22	sposato	via bord	bari
+1000000007	mike	scott	1969-04-06	sposato	via scotti	monopoli

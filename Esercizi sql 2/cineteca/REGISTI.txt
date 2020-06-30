@@ -1,0 +1,6 @@
+00001	mario	rossi	1990-10-19
+11112	erin	viol	1991-02-20
+11113	kat	dog	1979-03-02
+11114	jin	kaz	1984-05-02
+00005	andy	bern	1980-04-09
+11116	deril	black	1977-07-05

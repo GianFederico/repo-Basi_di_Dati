@@ -1,0 +1,4 @@
+1234	maria	rossi	f	1998-10-11	2015	no
+4567	giov	green	m	1996-11-29	2017	si
+8901	sara	nafe	f	1990-05-02	2014	no
+4321	giorgi	naso	m	1999-04-11	2016	si

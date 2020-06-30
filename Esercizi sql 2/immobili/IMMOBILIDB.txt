@@ -1,0 +1,58 @@
+create database IMMOBILI;
+use IMMOBILI;
+
+create table IMMOBILE(
+codimmobile char(5) not null unique primary key,
+tipo varchar(20) not null check(tipo in('appartamento','villa','casaepoca')),
+descrizione varchar(40),
+indirizzo varchar(30) not null,
+citta varchar(20) not null
+);
+
+create table ANAGRAFICA_CITTADINO(
+codfisc char(10) not null unique primary key,
+nome varchar(10) not null,
+cogn varchar(10) not null,
+datanascita date,
+statocivile varchar(10),
+indresidenza varchar(15) not null,
+cittaresidenza varchar(20) not null
+);
+
+create table IMMOBILE_PROPRIETARIO(
+codfisc char(10) not null references ANAGRAFICA_CITTADINO(codfisc),
+codimmobile char(5) not null unique references IMMOBILE(codimmobile),
+PRIMARY KEY (codfisc, codimmobile)
+);
+
+load data local infile "C:/Users/pc/Desktop/Uni/Basi di dati/Esercizi sql 2/immobili/IMMOBILI.txt" into table IMMOBILE fields terminated by '\t' lines terminated by '\r\n';
+load data local infile "C:/Users/pc/Desktop/Uni/Basi di dati/Esercizi sql 2/immobili/ANAGRAFICHE_CITTADINO.txt" into table ANAGRAFICA_CITTADINO fields terminated by '\t' lines terminated by '\r\n';
+load data local infile "C:/Users/pc/Desktop/Uni/Basi di dati/Esercizi sql 2/immobili/IMMOBILI_PROPRIETARIO.txt" into table IMMOBILE_PROPRIETARIO fields terminated by '\t' lines terminated by '\r\n';
+
+SELECT DISTINCT t.nome, t.cogn, t.codfisc
+FROM (select ac.nome, ac.cogn,ac.codfisc, ac.cittaresidenza, i.citta FROM ANAGRAFICA_CITTADINO as ac, IMMOBILE_PROPRIETARIO as ip, IMMOBILE as i WHERE ac.codfisc=ip.codfisc and i.codimmobile=ip.codimmobile) as t, IMMOBILE as i
+WHERE t.cittaresidenza<>t.citta;
+
+SELECT ac.nome, ac.cogn, ac.codfisc
+FROM ANAGRAFICA_CITTADINO as ac, IMMOBILE_PROPRIETARIO as ip, IMMOBILE as i
+WHERE ac.codfisc=ip.codfisc and ac.indresidenza=i.indirizzo and ac.cittaresidenza=i.citta;
+
+SELECT ac.nome, ac.cogn, ac.codfisc
+FROM ANAGRAFICA_CITTADINO as ac, IMMOBILE_PROPRIETARIO as ip, IMMOBILE as i
+WHERE ac.statocivile='sposato' and i.tipo='villa' and ac.codfisc=ip.codfisc and ac.indresidenza=i.indirizzo and ac.cittaresidenza=i.citta;
+
+create table COMUNE(
+codcomune char(5) not null unique primary key,
+nomecomune varchar(15) not null
+);
+ 
+alter table IMMOBILE drop column citta;
+alter table ANAGRAFICA_CITTADINO drop column cittaresidenza;
+
+alter table IMMOBILE add comune char(5) not null;
+alter table ANAGRAFICA_CITTADINO add comune char(5) not null;
+
+set foreign_key_checks=0;
+alter table IMMOBILE add constraint ek_c foreign key(comune) references COMUNE(codcomune);
+alter table ANAGRAFICA_CITTADINO add constraint ek1_c foreign key(comune) references COMUNE(codcomune);
+set foreign_key_checks=1;

@@ -1,0 +1,6 @@
+codice11111111111111	mario	rossi	1990-03-27	sposato	via blu	bari
+codice11111111111112	nico	bini	1984-05-20	single	viarossi	modugno
+codice11111111111113	gianni	verdi	1980-11-05	sposato	via don	modugno
+codice11111111111114	sara	nafe	1976-06-21	single	viale blu	modugno
+codice11111111111115	gian	caro	1992-07-23	sposato	vialenero	bari
+codice11111111111116	fede	red	1999-07-01	single	viacaro	modugno

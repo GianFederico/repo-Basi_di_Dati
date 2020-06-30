@@ -1,0 +1,6 @@
+00001	mario	rossi	1990-10-19
+00002	jim	halp	1986-11-04
+00003	mike	scott	1989-03-07
+00004	pam	bees	1979-02-02
+00005	andy	bern	1980-04-09
+00006	dwight	shrute	1976-01-01

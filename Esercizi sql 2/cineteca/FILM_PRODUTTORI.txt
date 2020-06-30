@@ -1,0 +1,6 @@
+22221	mario	rossi
+22222	mario	rossi
+22223	andy	bern
+22224	jin	kaz
+22225	kat	dog
+22226	deril	black

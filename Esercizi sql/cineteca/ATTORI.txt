@@ -1,0 +1,4 @@
+12345	mario	rossi	1980-09-08
+67890	gigi	verdi	1984-01-04
+09876	carlo	gialli	1990-07-22
+54321	marco	biondi	1979-11-12

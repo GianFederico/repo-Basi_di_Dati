@@ -1,0 +1,5 @@
+1000000001	rossi	mario	1995-11-04	tempodeterminato	bari
+1000000002	bianchi	gigi	1990-11-23	tempodeterminato	modugno
+1000000003	verdi	miki	1986-12-22	tempoindeterminato	bari
+1000000004	blu	giorge	1996-03-19	tempodeterminato	trani
+1000000005	gialli	jim	1979-01-20	tempoindeterminato	bari

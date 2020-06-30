@@ -1,0 +1,55 @@
+create database if not exists BANCA;
+use BANCA;
+
+create table CORRENTISTA(
+cf char(10) not null unique primary key,
+cogn varchar(10) not null,
+nome varchar(10) not null,
+datanascita date,
+tipocontratto varchar(20) not null check(tipocontratto in('tempodeterminato','tempoindeterminato')),
+cittaresidenza varchar(10) not null
+);
+
+create table DIPENDENTE(
+cf char(10) not null unique primary key,
+nome varchar(20) not null,
+cogn varchar(20) not null,
+datanasc date not null,
+qualifica varchar(20) check(qualifica in('impiegato','quadro','dirigente'))
+);
+
+create table CONTO_CORRENTE(
+numcc varchar(20) not null unique primary key,
+cf_correntista char(10) not null references CORRENTISTA(cf),
+saldo int(10)
+);
+
+load data local infile "C:/Users/pc/Desktop/Uni/Basi di dati/Esercizi sql 2/Nuova cartella/CORRENTISTI.txt" into table CORRENTISTA fields terminated by '\t' lines terminated by '\r\n';
+load data local infile "C:/Users/pc/Desktop/Uni/Basi di dati/Esercizi sql 2/Nuova cartella/DIPENDENTI.txt" into table DIPENDENTE fields terminated by '\t' lines terminated by '\r\n';
+load data local infile "C:/Users/pc/Desktop/Uni/Basi di dati/Esercizi sql 2/Nuova cartella/CONTI-CORRENTE.txt" into table CONTO_CORRENTE fields terminated by '\t' lines terminated by '\r\n';
+
+SELECT c.nome, c.cogn, c.cf, c.cittaresidenza
+FROM CORRENTISTA as c, CONTO_CORRENTE as cc
+WHERE c.tipocontratto='tempodeterminato' and c.cf=cc.cf_correntista and cc.saldo>100000
+GROUP BY c.cittaresidenza;
+
+SELECT d.nome, d.cogn, d.cf
+FROM DIPENDENTE as d, CONTO_CORRENTE as cc, CORRENTISTA as c
+WHERE cc.cf_correntista=d.cf and d.cf=c.cf and c.tipocontratto='tempoindeterminato' and COUNT(d.cf)>1;
+
+SELECT d.nome, d.cogn, d.cf
+FROM DIPENDENTE as d, CONTO_CORRENTE as cc
+WHERE d.qualifica='dirigente' and d.cf!=cc.cf_correntista;
+
+create table FILIALE(
+codfiliale char(5) not null unique primary key,
+citta varchar(20) not null,
+via varchar(20) not null,
+direttore char(10) not null references DIPENDENTE(cf)
+);
+
+alter table CONTO_CORRENTE add filiale char(5);
+alter table CONTO_CORRENTE add costraint filiale foreign key(filiale) references FILIALE(codfiliale);
+
+
+

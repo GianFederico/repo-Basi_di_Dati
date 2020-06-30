@@ -1,0 +1,6 @@
+10001	appartamento	piscina	via blu	bari
+10002	villa	giardino	via gialli	modugno
+10003	villa	attico	via rossi	bari
+10004	casaepoca	centro	piazza neri	bari
+10005	appartamento	scale	via verdi	modugno
+10006	casaepoca	vista	via aranci	bari

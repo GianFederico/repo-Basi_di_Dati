@@ -1,0 +1,4 @@
+123	basi	33	II
+345	asd	58	II
+555	discreta	55	I
+678	reti	89	III

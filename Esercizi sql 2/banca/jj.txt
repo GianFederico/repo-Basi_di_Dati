@@ -1,0 +1,3 @@
+d.cf!=cc.cf_correntista \ 
+
+d.cf is not in (select cc.cf_correntista from CONTO-CORRENTE)

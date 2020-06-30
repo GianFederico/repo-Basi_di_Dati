@@ -1,0 +1,5 @@
+1234	villa	bella casa	via bari	modugno
+5678	appartamento	nice one	via roma	bari
+9012	casadepoca	great view	via don	modugno
+3456	villa	piscina	viale blu	bari
+7890	villa	giardino	vialeverde	modugno

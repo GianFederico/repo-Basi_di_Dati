@@ -1,0 +1,5 @@
+1000000006	pam	beesly	1973-04-03	impiegato
+1000000007	dwight	shrute	1970-01-01	impiegato
+1000000008	mike	scott	1968-04-04	dirigente
+1000000005	gialli	jim	1979-01-20	impiegato
+1000000004	blu	giorge	1996-03-19	quadro

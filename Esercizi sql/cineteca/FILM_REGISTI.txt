@@ -1,0 +1,5 @@
+78901	mario	rossi
+78901	gigi	verdi
+23456	nana	rodi
+65433	richi	mens
+77890	gianni	pin

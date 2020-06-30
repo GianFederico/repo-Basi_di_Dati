@@ -1,0 +1,7 @@
+10001	mario	rossi	m	1990-10-22	2014	no
+10002	nico	verdi	m	1998-11-29	2015	si
+10003	jim	gialli	m	2000-09-04	2019	si
+10004	pam	neri	f	1999-05-06	2019	si
+10005	mike	scott	m	1989-07-01	2013	no
+10006	dwight	blu	m	1990-03-15	2012	no
+10007	karen	fucs	f	1996-05-11	2016	si

@@ -1,0 +1,4 @@
+33	mario	rossi	1980-03-02
+58	nico	bianchi	1974-09-13
+89	steve	verdi	1960-11-15
+55	donna	star	1978-12-28
